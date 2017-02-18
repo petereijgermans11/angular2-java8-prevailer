@@ -1,0 +1,22 @@
+http://archive.oreilly.com/pub/a/onjava/2005/06/08/prevayler.html?page=1
+
+---------
+
+http://prevayler.org/old_wiki/PrevalenceSkepticalFAQ.html
+
+RAM is getting cheaper every day. Researchers are announcing major BreakthroughsInMemoryTechnology.
+Even today, servers with multi-gigabyte RAM are commonplace. For many systems it is already feasible to keep all business objects in RAM.         
+         
+Do you mean I can simply have my objects in RAM and forget all that database hassle?         
+That's right.         
+         
+Are you crazy? What if there's a system crash?         
+To avoid losing data, every night, or in any reasonable period, your system server saves a snapshot of all business objects to a file using plain object serialization.         
+         
+What about the changes occurred since the last snapshot was taken? Won't the system lose those in a crash?         
+No. All commands received from the system's clients are converted into serializable objects by the server. 
+Before being applied to the business objects, each command is serialized and written to a log file. 
+During crash recovery, first, the system retrieves its last saved state from the snapshot file. 
+Then, it reads the commands from the log files created since the snapshot was taken. 
+These commands are simply applied to the business objects exactly as if they had just come from the system's clients. 
+The system is then back in the state it was just before the crash and is ready to run. 

@@ -1,5 +1,3 @@
-# galakpizza
-
 See this:
 https://github.com/airomem/galakpizza/tree/master/galakpizza_n 
 This is more advanced version of what I have shown on presentation. ( full presentation  from Voxxed Days Belgrade https://www.youtube.com/watch?v=B-Yp42lVvRo)
